@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>码源社区</title>
+<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<script type="text/javascript" src="core/main/js/1.0.1/fe.js"></script>
+	<link rel="stylesheet" type="text/css" href="core/main/css/1.0.1/fe.css">
+	<script type="text/javascript">
+		window.onload = function() {
+			
+		}
+	</script>
+	<style type="text/css">
+		div {border:1px solid orange;}
+		body {min-width:800px}
+		#nav {
+			position:absolute;
+			bottom:0px;
+			left:300px;
+		}
+		#topic {
+			float:left;
+			width:70%;
+		}
+		.topic-item {
+			width:200px;
+			height:300px;
+			float:left;
+		}
+		#photo {border:5px solid red;border-radius:50%;width:290px;height:290px;float:left}
+	</style>
+</head>
+
+<body>
+	<div style="height:300px;position:relative">
+		<img id="photo" src="image/Photo_0816_1a.jpeg"/>
+		<div style="width:70%;float:left">
+			<ul>
+				<li><label>博客地址：</label><span>fine365.github.io/fe/blog</span></li>
+				<li><label>注册时间：</label><span>2022-02-05</span></li>
+				<li><label>博主名称：</label><span>零.卡密特奇</span></li>
+				<li><label>博客名称：</label><span>码源社区</span></li>
+			</ul>
+			<div>
+				<label>博客简介：</label>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;记录java学习笔记与心得</p>
+			</div>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">文章</a></li>
+			</ul>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	<div style="position:relative">
+		<div style="width:300px;float:left;">
+			<div>
+				<h1>公告</h1>
+				<p>本博客的文章如需转载，请联系QQ3374267705</p>
+			</div>
+			
+			<div>
+				<h1>时光轴</h1>
+				<ul>
+					<li><label>2022</label><span>5篇</span></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h1>推荐文章</h1>
+				<ul>
+					<li><a href="test/1.0.6/article/string.html"><label>jdk文档入门指南：字符串</label><span>2022-04-09</span></a></li>
+					<li><a href="#"><label>jdk文档入门指南：字符串</label><span>2022-04-09</span></a></li>
+					<li><a href="#"><label>jdk文档入门指南：字符串</label><span>2022-04-09</span></a></li>
+					<li><a href="#"><label>jdk文档入门指南：字符串</label><span>2022-04-09</span></a></li>
+					<li><a href="#"><label>jdk文档入门指南：字符串</label><span>2022-04-09</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="topic">
+		<label>当前位置：</label>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">文章</a></li>
+				<li><a href="#">jdk文档入门指南：字符串</a></li>
+			</ul>
+			<!--<a href="#">
+			<div class="topic-item">
+				<h1>java基础</h1>
+			</div>
+			</a>
+			<a href="#">
+			<div class="topic-item">
+				<h1>java初级</h1>
+			</div>
+			</a>-->
+			<div id="article">
+				<h1 id="article-title">jdk文档入门指南：字符串</h1>
+				<p>
+					​前言：在Java中，字符串是一个对象，而不是一个字符数组，由java.lang.String进行定义，该类提供了多个方法，用于操作和处理字符串，比如，查找和替换子串等等，除了java.lang.String外，java.lang.StringBuilder和java.lang.StringBuffer也是一个常用于操作和处理字符串的类，java.lang.StringBuffer是线程安全的可变字符序列。一个类似于String的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。
+java.lang.StringBuffer上的主要操作是 append 和 insert 方法，可重载这些方法，以接受任意类型的数据。每个方法都能有效地将给定的数据转换成字符串，然后将该字符串的字符添加或插入到字符串缓冲区中。append 方法始终将这些字符添加到缓冲区的末端；而 insert 方法则在指定的点添加字符。 
+java.lang.StringBuilder和java.lang.StringBuffer两者都具备String类的大部分方法，效率更高于String类，常用于修改字符串。在Java编程中，常用的类可能就属String类了，常用它表示字符串，本文章试图讲解一些关于字符串的操作和处理的案例，方便开发者了解和使用String类，从程序设计的角度出发，详细设计，编程实践。
+</p><p>
+
+
+使用String类：
+用String类操作和处理字符串有如下几个关键的方法：
+</p><p>
+indexOf和lastIndexOf系列实例方法用于查找子串或者字符在字符串中的位置，<br/>
+subString系列实例方法用于获取子串，<br/>
+replace、replaceFirst和replaceAll等实例方法用于替换子串，<br/>
+toUpperCase和toLowerCase实例方法用于转换字符串中的大小写，<br/>
+charAt实例方法用于获取字符串相应位置的字符，<br/>
+startWith实例方法用判断字符串是否以某前缀开始，<br/>
+endWith方法判断字符串是否以某后缀结束，<br/>
+isEmpty实例方法判断字符串是否为空，<br/>
+length实例方法获取字符串的长度，<br/>
+split实例方法用于分割字符串。<br/>
+
+</p><p>
+案例1：表达式解析器<br/>
+本案例是一个JSON格式的变量名解析器，在javascript中，使用var关键字创建的JSON格式的变量可以使用相应的表达式获取其中的变量，如有以下JSON格式的变量
+<br/>var obj = {
+<br/>  username：“fe-spiderman”,
+<br/>  age:28,
+<br/>  email:["szdyj44@yeah.net","in_fe@qq.com"]
+<br/>}
+<br/>则可以使用以下表达式获取obj对象中的变量
+<br/>//获取username变量
+<br/>obj["username"]
+<br/>obj.username
+​<br/>
+<br/>//获取age变量
+<br/>obj["age"]
+<br/>obj.age
+​<br/>
+<br/>//获取第一个邮箱
+<br/>obj.email[0]
+<br/>obj["email"][0]
+<br/>该表达式具有以下特征：
+<br/>1、字符'.'为一级分割符，字符'['和']'为二级分割符
+<br/>
+<br/>2、二级分割符的里面为变量的索引（变量对应的键或者数组下标值）
+<br/>
+<br/>该表达式的解析过程如下
+<br/>
+<br/>1、使用split分割表达式。
+<br/>
+<br/>2、使用charAt在分割后的各子表达式查找二级分隔符。
+<br/>
+<br/>3、对特定的子表达式使用subString获取二级索引。
+<br/>
+<br/>4、将各级索引存储到一个String数组中。
+<br/>本案例主要使用了split、charAt和subString方法
+<br/>
+<br/>表达式解析器在编译器、计算器和正则表达式的实现过程中都有可能使用，因此，学会使用String类的这个三个方法很重要。
+<br/>
+<br/>
+<br/>
+<br/>使用StringBuffer类
+<br/>
+<br/>append系列实例方法用于将基础类型的数值数据添加到一个可变序列的末端，
+<br/>
+<br/>insert系列实例方法用于将基础类型的数值数据添加到一个可变序列的任意位置。
+<br/>
+<br/>StringBuffer具备类String类的大部分方法。如subString，charAt、indexOf、lastIndexOf等方法。
+<br/>
+<br/>
+<br/>案例2：字符串对齐器
+<br/>
+<br/>字符串对齐器是一个处理字符串对齐方式的程序，一般的，字符串的对齐方式包括居中对齐、两端对齐、左对齐和右对齐的对齐方式，当一个窗口各行所能容下的字符个数有限时，自动换行并按照指定的对齐方式对齐。
+<br/>
+<br/>
+<br/>
+<br/>对该程序的理解如下：
+<br/>
+<br/>1、窗口内各行的字符容量有限。
+<br/>
+<br/>2、当字符串超过字符容量时自动换行。
+<br/>
+<br/>3、按照指定的对齐方式对齐字符串。
+<br/>
+<br/>
+<br/>
+<br/>该程序的实现过程如下：
+<br/>
+<br/>1、计算字符串的显示长度。
+<br/>
+<br/>2、根据对齐方式使用append方法在原来的字符串上添加空格字符。
+<br/>
+<br/>3、输出可变字符序列StringBuffer。
+<br/>
+<br/>
+<br/>
+<br/>StringBuffer与StringBuilder的区别：
+<br/>
+<br/>1、StringBuffer是线程安全的，StringBuilder是线程不安全的。
+<br/>
+<br/>2、StringBuffer每次从缓冲区直接获取字符串，而StringBuilder每次会拷贝一个字符串。
+<br/>
+<br/>3、在单线程环境下使用StringBuilder的性能大于StringBuffer。
+<br/>
+<br/>4、StringBuffer适用于多线程同时操作一个字符串。
+<br/>
+<br/>
+</p><p>
+总结：字符串算是一个程序设计语言的基础处理类，熟悉和掌握字符串的处理是程序设计过程中的一项基本技能，它包括处理字符串、解析表达式等复杂逻辑，字符串的处理程序在编译器、网页开发、序列化等方面都有应用，如网页数据JSON格式解析、DOM节点解析、XML数据序列化等程序都要求能够理解和处理字符串的复杂逻辑，如本案例中表达式解析器和字符串对齐器，表达式解析器是一种解析程序，它将一个有规则的表达式字符串解析为一定的数据结构来表示某个数据的索引（一种数据访问时需要的特征，如数组下标或者数据对应的键），然后由容器通过解析这种数据结构来获取容器中对应的数据。
+
+字符串对齐器可以用于UI布局，UI由一定的文本、组件和控件组成，其中的文本的排版需要根据相应字符串的对齐方式来决定，这就需要一个布局管理器来决定文本的布局，字符串对齐器是一种布局管理器，它可以用有一定规则的表达式字符串来表示某种布局，再由表达式解析器解析成相应的字符串文本，从而实现UI文本布局，字符串的处理灵活多变，表达式也多种多样，但是基本字符串操作和处理全部封装在了java.lang.String、java.lang.StringBuffer以及java.lang.StringBuilder等基础类中，因此理解这些基础类的相应操作对应的方法就可以应对复杂的逻辑业务了。
+				</p>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	<div></div>
+</body>
+</html>
